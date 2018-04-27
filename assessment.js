@@ -7,7 +7,7 @@ After writing your function uncomment the matching function reference at the bot
 // 1. Write a function called helloWorld that returns the string 'Hello World!'.
 
 function helloWorld() {
-
+  return ('Hello World!');
 }
 
 /*
@@ -23,8 +23,17 @@ function helloWorld() {
              lambdaSchool(8); // returns 8
 */
 
-function lambdaSchool() {
-
+function lambdaSchool(num) {
+  is_divisible_by_3 = (num%3==0 && 'Lambda');
+  is_divisible_by_5 = (num%5==0 && 'School');
+  if (is_divisible_by_3 && is_divisible_by_5) {
+    return (is_divisible_by_3+" "+is_divisible_by_5);
+  } else if (is_divisible_by_3) {
+    return (is_divisible_by_3);
+  } else if (is_divisible_by_5) {
+    return (is_divisible_by_5);
+  } 
+  return (num);
 }
 
 /*
@@ -38,8 +47,10 @@ function lambdaSchool() {
              longestString(['JavaScript', 'HTML', 'CSS']); // returns 'JavaScript'
 */
 
-function longestString() {
-
+function longestString(strs) {
+  longest = strs[0];
+  strs.forEach(str=> {if (str.length > longest.length) {longest = str}});
+  return (longest);
 }
 
 /*
@@ -63,8 +74,10 @@ function longestString() {
              computeUserAverageAge(users); // returns 62 (This number is rounded up from 61.6666)
 */
 
-function computeUserAverageAge() {
-
+function computeUserAverageAge(users) {
+  sum_of_ages = 0
+  users.forEach(user => sum_of_ages+=user.age)
+  return (Math.round(sum_of_ages/users.length))
 }
 
 module.exports = {
